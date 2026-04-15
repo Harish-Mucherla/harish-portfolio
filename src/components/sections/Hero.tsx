@@ -1,34 +1,20 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { personalInfo } from "@/lib/data";
-import { HeroTypewriter } from "./HeroTypewriter";
 
-
-const words = ["I build", "things", "for the", "web."];
+const words = ["Crafting scalable,", "high-performance", "UI systems", "for modern", "web applications."];
 
 export function Hero() {
-  const [introComplete, setIntroComplete] = useState(false);
-
-  const handleIntroDone = useCallback(() => {
-    setIntroComplete(true);
-  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
       <AnimatePresence mode="wait">
-        {!introComplete ? (
-          /* ── Typewriter intro ── */
-          <div key="intro" className="relative z-10 w-full">
-            <HeroTypewriter onDone={handleIntroDone} />
-          </div>
-        ) : (
-          /* ── Real hero content ── */
+      {/* ── Real hero content ── */}
           <motion.div
             key="hero"
             initial={{ opacity: 0, y: 20 }}
@@ -123,12 +109,11 @@ export function Hero() {
               </motion.div>
             </div>
           </motion.div>
-        )}
+     
       </AnimatePresence>
 
       {/* Scroll indicator — only after intro */}
-      <AnimatePresence>
-        {introComplete && (
+      <AnimatePresence>    
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -143,7 +128,6 @@ export function Hero() {
               <ArrowDown size={14} />
             </motion.div>
           </motion.div>
-        )}
       </AnimatePresence>
     </section>
   );
