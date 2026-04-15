@@ -17,7 +17,7 @@ export const projects = [
     description:
       "A benefits navigation platform helping employees understand and manage their healthcare benefits. Built dynamic, accessible UI components and integrated complex benefits APIs to simplify decision-making at scale.",
     impact: "Simplifying benefits decisions for thousands of Cigna employees",
-    stack: ["React", "Node.js", "GraphQL", "PostgreSQL", "TypeScript", "Redux Toolkit", "Material UI", "Jest", "Figma"],
+    stack: ["React", "Node.js", "Next.js", "GraphQL", "PostgreSQL", "TypeScript", "Redux Toolkit", "Material UI", "Jest", "Figma"],
     domain: "Healthcare · Benefits Administration",
     gradient: "from-indigo-500/20 via-purple-500/10 to-transparent",
   },
