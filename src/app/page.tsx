@@ -19,7 +19,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
-        <BlogPreview posts={posts} />
+        {/* <BlogPreview posts={posts} /> */}
         <Contact />
       </main>
       <Footer />

@@ -39,7 +39,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="font-mono text-[var(--accent)] text-sm">05.</span>
+          <span className="font-mono text-[var(--accent)] text-sm">04.</span>
           <h2 className="text-3xl font-bold text-[var(--foreground)]">Contact</h2>
           <div className="flex-1 h-px bg-[var(--border)] ml-2" />
         </motion.div>
