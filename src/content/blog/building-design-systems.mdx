@@ -1,0 +1,44 @@
+---
+title: "What 9 Years of Enterprise UI Taught Me About Design Systems"
+date: "2024-03-15"
+excerpt: "Building UI for healthcare and telecom enterprises has one universal truth: a design system is never about components. It's about decisions."
+tags: ["Design Systems", "React", "TypeScript", "UI Engineering"]
+---
+
+Nine years of building frontends for healthcare and telecom enterprises has given me one clear conviction: **a design system is not a component library.** It's a decision system.
+
+## The Costly Mistake
+
+Early in my career, I treated design systems as a collection of reusable components. `<Button>`, `<Modal>`, `<Input>`. Clean, DRY, done.
+
+The problem surfaced during a large BCBS Florida project. We had a "design system" with 40+ components. Yet, every new screen took just as long to build as it did before. Designers and developers were still debating — every sprint — what padding a card should have, what "muted" meant as a color, whether a loading state should use a spinner or a skeleton.
+
+The components were reusable. The **decisions** were not.
+
+## What a Real Design System Solves
+
+A design system's primary job is to make decisions **once** and make them **unavoidable**.
+
+### Tokens First
+
+Before a single component, define tokens:
+
+```ts
+export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32 } as const;
+export const radius = { sm: 6, md: 12, lg: 16, full: 9999 } as const;
+export const color = {
+  accent: '#6366f1',
+  muted: '#94a3b8',
+  surface: 'rgba(255,255,255,0.05)',
+} as const;
+```
+
+When a designer asks "how much padding does this card have?" the answer is `spacing.lg` — not "24px". The name carries the intent.
+
+### Variants, Not Props Sprawl
+
+Components should encode decisions, not expose every possible configuration. If your team is still debating the same UI decisions sprint after sprint, you don't have a component library problem — you have a decision-making problem.
+
+## The Takeaway
+
+Build the system that makes the right choice the only choice.

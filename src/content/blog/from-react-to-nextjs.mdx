@@ -1,0 +1,48 @@
+---
+title: "From React to Next.js: What I Learned Making the Switch"
+date: "2024-04-10"
+excerpt: "After 9 years of building React apps, I finally made the jump to Next.js. Here's what surprised me, what I loved, and what I'd do differently."
+tags: ["Next.js", "React", "Frontend", "Web Development"]
+---
+
+After years of building large-scale React SPAs for enterprise clients — healthcare platforms, telecom dashboards, HR tools — I finally decided to make the jump to **Next.js**. Here's an honest account of that transition.
+
+## Why Now?
+
+The trigger was simple: performance. Internal enterprise apps rarely care about SEO, but they care deeply about **initial load time**. A pharmacy benefits portal with a 6-second TTI is not acceptable, regardless of how good the React code is underneath.
+
+Next.js's SSR and SSG capabilities immediately addressed this. Pages that previously needed a full JS bundle hydration could now be served as static HTML.
+
+## What Surprised Me
+
+### The App Router is a Different Mental Model
+
+Coming from React, I expected Next.js to feel like "React with routing." The App Router is more than that. **Server Components** fundamentally change where you think about data fetching — moving it closer to the component that needs it, rather than hoisting everything to a top-level context.
+
+```tsx
+// No useEffect, no loading state — just async/await
+async function ProjectList() {
+  const projects = await fetchProjects(); // runs on the server
+  return <ul>{projects.map(p => <li key={p.id}>{p.name}</li>)}</ul>;
+}
+```
+
+### Layouts are Powerful
+
+Nested layouts eliminate a ton of boilerplate. No more wrapping every page in a `<Layout>` component manually. The `layout.tsx` convention handles it, and it composes cleanly.
+
+### Caching is Smart (but Opinionated)
+
+Next.js aggressively caches fetch calls. This is great for performance but took some time to reason about. Understanding `force-dynamic`, `revalidate`, and `cache: 'no-store'` is essential before you start wondering why your data isn't updating.
+
+## What I'd Do Differently
+
+1. **Learn Server vs Client Components first** — before writing a single line of code, understand what runs where. I wasted time adding `"use client"` everywhere out of habit.
+2. **Use `next-themes` for dark mode immediately** — retrofitting theme support later is painful.
+3. **MDX for blog content** — it's first-class in Next.js and keeps content in your repo where it belongs.
+
+## Verdict
+
+If you're a React developer and haven't explored Next.js, **start now**. The mental model shift is real but small, and the performance and DX payoff is immediate.
+
+The ecosystem around it — Vercel, Turborepo, Tailwind, Framer Motion — feels cohesive in a way that a DIY React setup rarely does.
