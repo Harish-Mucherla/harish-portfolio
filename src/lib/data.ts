@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Harish Mucherla",
-  tagline: "Senior Full-Stack Developer",
+  tagline: "Full-Stack Developer",
   bio: "I build things for the web — from complex enterprise dashboards to patient-facing healthcare platforms. With 9+ years as a Full-Stack Developer, I've worked with clients like Cigna, BlueCross BlueShield of Florida and Verizon to turn messy domain problems into clean, reliable digital products. I care about the intersection of great UX and solid engineering.",
   linkedin: "https://www.linkedin.com/in/harish-mucherla/",
   github: "https://github.com/harish-mucherla",
@@ -115,7 +115,7 @@ export const skills = [
 ];
 
 export const timeline = [
-  { period: "January 2025 – Present", role: "Senior Full-Stack Developer", company: "Cigna Healthcare" },
+  { period: "January 2025 – Present", role: "Full-Stack Developer", company: "Cigna Healthcare" },
   { period: "October 2022 – December 2024", role: "Full-Stack Developer", company: "BlueCross BlueShield of Florida" },
   { period: "March 2022 – September 2022", role: "Full-Stack Developer", company: "Verizon" },
   { period: "April 2019 – February 2022", role: "Frontend Developer", company: "BlueCross BlueShield of Florida" },
